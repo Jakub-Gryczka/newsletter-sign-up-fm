@@ -1,24 +1,105 @@
 :root {
-    --color-red-primary: hsl(4, 100%, 67%);
-    --color-grey-darker: hsl(234, 29%, 20%);
-    --color-grey-dark: hsl(235, 18%, 26%);
-    --color-grey: hsl(231, 7%, 60%);
-    --color-white: hsl(0, 0%, 100%);
-    --ff-primary: 'Roboto', sans-serif;
-    --fw-primary: 400;
-    --fw-bold: 700;
+  --color-red-primary: hsl(4, 100%, 67%);
+  --color-grey-darker: hsl(234, 29%, 20%);
+  --color-grey-dark: hsl(235, 18%, 26%);
+  --color-grey: hsl(231, 7%, 60%);
+  --color-white: hsl(0, 0%, 100%);
+  --ff-primary: "Roboto", sans-serif;
+  --fw-primary: 400;
+  --fw-bold: 700;
 }
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-    font-family: var(--ff-primary);
-    font-weight: var(--fw-primary);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-primary);
+  line-height: 1.5;
 }
+img {
+  display: block;
+  max-width: 100%;
+}
+p {
+    max-width: 45ch;
+}
+.image,
 .container {
-    width: min(90%, 1200px);
+  margin: 0 auto;
+}
+.image > img {
     margin: 0 auto;
 }
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+.btn,
+.email {
+  display: inline-block;
+  font-family: inherit;
+  padding: 1.3em 1em;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+.btn {
+  color: var(--color-white);
+  background-color: var(--color-grey-darker);
+  font-weight: var(--fw-bold);
+  margin-block: 1.5em;
+}
 .hidden {
-    display: none;
+  display: none;
+}
+.main-heading {
+  color: var(--color-grey-darker);
+  margin-block: 0.7em;
+}
+.main__text {
+  margin-block-end: 1.4em;
+}
+.main__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.list-item {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+}
+.form-title {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 3.5em 0.2em;
+}
+.form-email, .form-title {
+  font-size: clamp(0.6rem, 2vw, 0.7rem);
+  font-weight: var(--fw-bold);
+  color: var(--color-grey-darker);
+}
+.form-title {
+    color: var(--color-red-primary);
+}
+
+.email {
+  padding: 1.3em 1em;
+  width: 100%;
+  border-radius: 6px;
+  border: var(--color-grey) solid 1px;
+  outline: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }

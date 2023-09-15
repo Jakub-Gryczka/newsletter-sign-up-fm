@@ -21,51 +21,58 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
-    <header class="primary-heading">
+    <div class="image">
+      <img src="assets/images/illustration-sign-up-mobile.svg" alt="sign-up illustration">
+    </div>
+    <header class="primary-heading container">
       <h1 class="main-heading">Stay updated!</h1>
     </header>
-    <main class="main">
+    <main class="main container">
       <p class="main__text text">
         Join 60,000+ product managers receiving monthly updates on: 
         <ul class="main__list">
             <li class="list-item">
-              Product
-              discovery and building what matters 
+              <img src="assets/images/icon-list.svg" alt="list icon"> 
+              <p class="list-item__text">
+                Product
+                discovery and building what matters 
+              </p>
             </li> 
             <li class="list-item">
+              <img src="assets/images/icon-list.svg" alt="list icon">
+              <p class="list-item__text">
               Measuring to ensure updates are a
               success 
+              </p>
             </li>
             <li class="list-item"> 
-              And much more! Email address email@company.com 
+              <img src="assets/images/icon-list.svg" alt="list icon">
+              <p class="list-item__text">
+                And much more! 
+              </p>
             </li>
         </ul>
       </p>
       <!-- Sign-up form start -->
-
+      <form action="" method="get" class="form">
+        <div class="form-title">
+          <p class="form-email"> Email address</p>
+          <p class="form-error hidden">Valid e-mail required</p>
+        </div>
+        <div class="form-row">
+          <input type="text" name="email" class="email" placeholder="email@company.com">
+        </div>
+        <div class="form-row">
+          <input type="submit" value="Subscribe to monthly newsletter" class="btn form-btn">
+        </div>
+      </form>
       <!-- Sign-up form end -->
-      <button class="btn">
-        Subscribe to monthly newsletter
-      </button>
     </main>
-
-
-
     <!-- Success message start -->
-    <div class="acknowledgement">
+    <div class="acknowledgement hidden container">
       <p class="acknowledgement__text"> 
         Thanks for subscribing! A confirmation email has been sent to
         ash@loremcompany.com. Please open it and click the button inside to confirm
