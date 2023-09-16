@@ -18,7 +18,7 @@
   padding: 0;
 }
 body {
-  min-height: 105vh;
+  min-height: 100vh;
   font-family: var(--ff-primary);
   font-weight: var(--fw-primary);
   color: var(--color-grey-dark);
@@ -208,5 +208,10 @@ p {
   }
   .body-background {
     background-color: var(--color-grey-darker);
+  }
+}
+@media (max-height: 800px) {
+  body {
+    min-height: 115vh;
   }
 }
