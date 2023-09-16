@@ -1,5 +1,6 @@
 :root {
   --color-red-primary: hsl(4, 100%, 67%);
+  --color-red-primary-light: hsl(4, 100%, 95%);
   --color-grey-darker: hsl(234, 29%, 20%);
   --color-grey-dark: hsl(235, 18%, 26%);
   --color-grey: hsl(231, 7%, 60%);
@@ -7,6 +8,7 @@
   --ff-primary: "Roboto", sans-serif;
   --fw-primary: 400;
   --fw-bold: 700;
+  --color-red-secondary: rgba(255, 83, 121, 1);
 }
 *,
 *::before,
@@ -18,26 +20,29 @@
 body {
   font-family: var(--ff-primary);
   font-weight: var(--fw-primary);
+  color: var(--color-grey-dark);
   line-height: 1.5;
+  position: relative;
 }
 img {
   display: block;
   max-width: 100%;
 }
 p {
-    max-width: 45ch;
+  max-width: 45ch;
 }
-.image,
+.img-card,
 .container {
   margin: 0 auto;
 }
-.image > img {
-    margin: 0 auto;
+.img-card > img {
+  margin: 0 auto;
 }
 .container {
   width: min(90%, 1200px);
   margin: 0 auto;
 }
+
 .btn,
 .email {
   display: inline-block;
@@ -53,11 +58,19 @@ p {
   background-color: var(--color-grey-darker);
   font-weight: var(--fw-bold);
   margin-block: 1.5em;
+  cursor: pointer;
 }
 .hidden {
   display: none;
 }
+.img1 {
+  display: block;
+}
+.img2 {
+  display: none;
+}
 .main-heading {
+  font-size: clamp(2.5rem, 2.5vw, 4rem);
   color: var(--color-grey-darker);
   margin-block: 0.7em;
 }
@@ -65,9 +78,9 @@ p {
   margin-block-end: 1.4em;
 }
 .main__list {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 .list-item {
   display: flex;
@@ -75,25 +88,80 @@ p {
   align-items: flex-start;
 }
 .form-title {
-    display: flex;
-    justify-content: space-between;
-    margin-block: 3.5em 0.2em;
+  display: flex;
+  justify-content: space-between;
+  margin-block: 3.5em 0.2em;
 }
-.form-email, .form-title {
+.form-email,
+.form-title {
   font-size: clamp(0.6rem, 2vw, 0.7rem);
   font-weight: var(--fw-bold);
   color: var(--color-grey-darker);
 }
 .form-title {
-    color: var(--color-red-primary);
+  color: var(--color-red-primary);
 }
-
 .email {
   padding: 1.3em 1em;
   width: 100%;
   border-radius: 6px;
   border: var(--color-grey) solid 1px;
   outline: none;
+}
+.bg-slider {
+  background: linear-gradient(
+    90deg,
+    var(--color-grey-darker) 0%,
+    var(--color-grey-darker) 50%,
+    var(--color-red-secondary) 9%,
+    var(--color-red-primary) 70%
+  );
+  background-size: 200%;
+  transition: background-position 0.4s cubic-bezier(0.47, 0.1, 1, 0.63);
+  transition-delay: 0s, 0.15s;
+}
+.bg-slider:hover,
+.bg-slider:focus {
+  cursor: pointer;
+  background-position: -100% 100%;
+}
+.acknowledgement__icon {
+  margin-block-end: 1em;
+}
+/* .acknowledgement__content {
+  color: var(--color-grey-darker);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background-color: var(--color-white);
+  z-index: 2;
+  padding-inline: 2em;
+  line-height: 1.2;
+} */
+.acknowledgement__content {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.acknowledgement__content-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+}
+.acknowledgement__text {
+  letter-spacing: 0.4px;
+}
+.btn-dismiss {
+  margin-bottom: auto;
 }
 
 .attribution {
@@ -102,4 +170,62 @@ p {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+.error {
+  border: 1px solid var(--color-red-primary);
+  background-color: var(--color-red-primary-light);
+  color: var(--color-red-primary);
+
+}
+@media (min-width: 768px) {
+  .img1 {
+    display: none;
+  }
+  .img2 {
+    display: block;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    min-height: 95vh;
+  }
+  .wrapper {
+    width: max-content;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 30px;
+  }
+  .img-card > img {
+    padding: 1.5em;
+    width: 100%;
+  }
+  .card {
+    flex: 1 1 50%;
+  }
+  .content-card {
+    padding-inline: 3em;
+  }
+  .acknowledgement__content {
+    min-height: auto;
+    color: var(--color-grey-darker);
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    inset: 0;
+    margin: auto;
+    line-height: 1.2;
+    background-color: var(--color-white);
+    border-radius: 30px;
+    padding: 3em;
+    overflow: hidden;
+  }
+  .body-background {
+    background-color: var(--color-grey-darker);
+  }
+}
+@media (min-width: 768px) {
+  
 }

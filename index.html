@@ -22,66 +22,97 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
-  <body>
-    <div class="image">
-      <img src="assets/images/illustration-sign-up-mobile.svg" alt="sign-up illustration">
+  <body class="body-background">
+    <div class="wrapper container">
+      <aside class="card img-card">
+        <img
+          src="assets/images/illustration-sign-up-mobile.svg"
+          alt="sign-up illustration"
+          class="img1"
+        />
+        <img
+          src="assets/images/illustration-sign-up-desktop.svg"
+          alt="sign-up illustration"
+          class="img2"
+        />
+      </aside>
+      <main class="card content-card container">
+        <header class="primary-heading">
+          <h1 class="main-heading">Stay updated!</h1>
+        </header>
+        <section class="main">
+          <p class="main__text text">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+
+          <ul class="main__list">
+            <li class="list-item">
+              <img src="assets/images/icon-list.svg" alt="list icon" />
+              <p class="list-item__text">
+                Product discovery and building what matters
+              </p>
+            </li>
+            <li class="list-item">
+              <img src="assets/images/icon-list.svg" alt="list icon" />
+              <p class="list-item__text">
+                Measuring to ensure updates are a success
+              </p>
+            </li>
+            <li class="list-item">
+              <img src="assets/images/icon-list.svg" alt="list icon" />
+              <p class="list-item__text">And much more!</p>
+            </li>
+          </ul>
+          <!-- Sign-up form start -->
+          <form method="get" class="form" onsubmit="return false">
+            <div class="form-title">
+              <p class="form-email">Email address</p>
+              <p class="form-error hidden">Valid e-mail required</p>
+            </div>
+            <div class="form-row email-row">
+              <input
+                type="text"
+                name="email"
+                class="email"
+                placeholder="email@company.com"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="submit"
+                value="Subscribe to monthly newsletter"
+                class="btn form-btn bg-slider"
+              />
+            </div>
+          </form>
+          <!-- Sign-up form end -->
+        </section>
+      </main>
     </div>
-    <header class="primary-heading container">
-      <h1 class="main-heading">Stay updated!</h1>
-    </header>
-    <main class="main container">
-      <p class="main__text text">
-        Join 60,000+ product managers receiving monthly updates on: 
-        <ul class="main__list">
-            <li class="list-item">
-              <img src="assets/images/icon-list.svg" alt="list icon"> 
-              <p class="list-item__text">
-                Product
-                discovery and building what matters 
-              </p>
-            </li> 
-            <li class="list-item">
-              <img src="assets/images/icon-list.svg" alt="list icon">
-              <p class="list-item__text">
-              Measuring to ensure updates are a
-              success 
-              </p>
-            </li>
-            <li class="list-item"> 
-              <img src="assets/images/icon-list.svg" alt="list icon">
-              <p class="list-item__text">
-                And much more! 
-              </p>
-            </li>
-        </ul>
-      </p>
-      <!-- Sign-up form start -->
-      <form action="" method="get" class="form">
-        <div class="form-title">
-          <p class="form-email"> Email address</p>
-          <p class="form-error hidden">Valid e-mail required</p>
-        </div>
-        <div class="form-row">
-          <input type="text" name="email" class="email" placeholder="email@company.com">
-        </div>
-        <div class="form-row">
-          <input type="submit" value="Subscribe to monthly newsletter" class="btn form-btn">
-        </div>
-      </form>
-      <!-- Sign-up form end -->
-    </main>
     <!-- Success message start -->
-    <div class="acknowledgement hidden container">
-      <p class="acknowledgement__text"> 
-        Thanks for subscribing! A confirmation email has been sent to
-        ash@loremcompany.com. Please open it and click the button inside to confirm
-        your subscription. Dismiss message 
-      </p>
+    <div class="acknowledgement hidden">
+      <div class="acknowledgement__content container">
+        <div class="acknowledgement__content-text">
+          <img
+            src="assets/images/icon-success.svg"
+            alt="success icon"
+            class="icon acknowledgement__icon"
+          />
+          <h1 class="acknowledgement__heading">Thanks for subscribing!</h1>
+          <p class="acknowledgement__text">
+            A confirmation email has been sent to ash@loremcompany.com. Please
+            open it and click the button inside to confirm your subscription.
+          </p>
+          <button class="btn btn-dismiss bg-slider">Dismiss message</button>
+        </div>
+      </div>
     </div>
     <!-- Success message end -->
 
-    <div class="attribution">
+    <div class="attribution hidden">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
